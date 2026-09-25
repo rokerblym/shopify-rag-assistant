@@ -31,6 +31,39 @@ POST `/ask`
 {
   "question": "How long does shipping take?"
 }
+```
+
+## Example Response
+
+```json
+{
+  "question": "How long does shipping take?",
+  "answer": "Orders are processed within 1 to 2 business days. Standard shipping takes 3 to 5 business days.",
+  "confidence": "high",
+  "sources": [
+    {
+      "source": "Shipping Policy",
+      "text": "Orders are processed within 1 to 2 business days. Standard shipping takes 3 to 5 business days."
+    }
+  ]
+}
+```
+
+## Run Locally
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Open Swagger:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
 ## Why I Built This
 
 I built this project to practice the same core ideas used in AI support systems: semantic retrieval, grounded answers, source citations, and backend API design.
